@@ -26,7 +26,7 @@ struct ImmersiveView: View {
         @Bindable var viewModel = viewModel
         @Bindable var immersiveStateModel = immersiveStateModel
         RealityView { content, attachments in
-            if let scene = try? await Entity(named: heroScene, in: realityKitContentBundle) {
+            if let scene = try? await Entity(named: aiBotScene, in: realityKitContentBundle) {
                 let characterEntity = AnchorEntity(.head)
                 characterEntity.position = [0.70, 0, -1]
                 let radians = -40 * Float.pi / 180
@@ -123,13 +123,6 @@ struct ImmersiveView: View {
     }
     
     func playIntroSequence() {
-        // reset particle system states
-        // note that these need to happen within the main actor thread
-        // because the "components" are actor-isolated variables
-        // https://chat.openai.com/share/dc3c7b4b-8dcb-45d1-a4d1-863d7281f061
-//        projectile?.components[ProjectileComponent.self]?.bursted = false
-//        projectile?.components[ProjectileComponent.self]?.canBurst = false
-
         Task {
             // show dialog box
             if !showTextField {
@@ -137,9 +130,6 @@ struct ImmersiveView: View {
                     showTextField.toggle()
                 }
             }
-//            if let assistant = self.assistant, let waveAnimation = self.waveAnimation {
-//                await assistant.playAnimation(waveAnimation.repeat(count: 1))
-//            }
             let texts = [
                 "Hello, I am Jarvis. \nYour AI assistant. Do you need to start the service today?",
             ]
@@ -159,16 +149,11 @@ struct ImmersiveView: View {
             Task {
                 await animatePromptText(text: texts[1])
             }
-
-//            DispatchQueue.main.async {
-//                openWindow(id: "doodle_canvas")
-//            }
         }
     }
     
     
     func animatePromptText(text: String) async {
-        // Type out the title.
         inputText = ""
         let words = text.split(separator: " ")
         for word in words {

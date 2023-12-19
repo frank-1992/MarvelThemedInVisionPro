@@ -96,8 +96,7 @@
     "objectMetadataList" : [
       [
         "CB766F92-EE55-4A63-9401-E7B8C009764D",
-        "Root",
-        "GridMaterial"
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -105,7 +104,8 @@
       },
       [
         "CB766F92-EE55-4A63-9401-E7B8C009764D",
-        "Root"
+        "Root",
+        "GridMaterial"
       ],
       {
         "isExpanded" : true,
@@ -131,15 +131,6 @@
       [
         "D66134B1-3681-4A8E-AFE5-29F257229F3B",
         "Root",
-        "AIBot_Jarvis"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "D66134B1-3681-4A8E-AFE5-29F257229F3B",
-        "Root",
         "GridMaterial",
         "GridMaterial"
       ],
@@ -153,18 +144,6 @@
     "objectMetadataList" : [
       [
         "FC7FDA42-FBA4-42D2-9577-BA5A3188AB58",
-        "Root",
-        "FileParticle"
-      ],
-      {
-        "isExpanded" : false,
-        "isLocked" : false,
-        "selectedAudioFilePrim" : {
-          "string" : "\/Root\/FileParticle\/fire_wav"
-        }
-      },
-      [
-        "FC7FDA42-FBA4-42D2-9577-BA5A3188AB58",
         "Root"
       ],
       {
@@ -176,6 +155,18 @@
         "Root",
         "FileParticle",
         "SpatialAudio"
+      ],
+      {
+        "isExpanded" : false,
+        "isLocked" : false,
+        "selectedAudioFilePrim" : {
+          "string" : "\/Root\/FileParticle\/fire_wav"
+        }
+      },
+      [
+        "FC7FDA42-FBA4-42D2-9577-BA5A3188AB58",
+        "Root",
+        "FileParticle"
       ],
       {
         "isExpanded" : false,

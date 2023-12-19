@@ -18,7 +18,7 @@ struct MarvelApp: App {
                 .environment(immersiveStateModel)
         }
 
-        ImmersiveSpace(id: heroScene) {
+        ImmersiveSpace(id: aiBotScene) {
             ImmersiveView()
                 .environment(viewModel)
                 .environment(immersiveStateModel)

@@ -8,5 +8,6 @@
 import Foundation
 
 let mainScene = "Scene"
-let heroScene = "AIBot_Jarvis"//"Heros"
+let heroScene = "Heros"
 let aiBotScene = "AIBot_Jarvis"
+let heroContainerScene = "HeroContainerScene"

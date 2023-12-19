@@ -12,23 +12,20 @@ def Xform "Root"
         bindMaterialAs = "weakerThanDescendants"
     )
 
-    def "AIBot_Jarvis" (
+    def "Robot_RoCKet" (
         active = true
-        prepend references = @AIBot_Jarvis.usda@
+        prepend references = @Robot_RoCKet.usdz@
     )
     {
-        float3 xformOp:scale = (0.3, 0.3, 0.3)
-        float3 xformOp:translate = (0, 0, 0)
+        float3 xformOp:scale = (0.03, 0.03, 0.03)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
-        over "Robot_RoCKet" (
-            customData = {
-                float3 rotationEulerHint = (0.261799, 0, 0)
-            }
-        )
+        over "SkinnedMeshes"
         {
-            quatf xformOp:orient = (0.9914449, 0.130526, 0, 0)
-            float3 xformOp:scale = (0.001, 0.001, 0.001)
+            quatf xformOp:orient = (1, 0, 0, 0)
+            float3 xformOp:scale = (1, 1, 1)
+            float3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
     }
 }

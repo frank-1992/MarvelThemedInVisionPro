@@ -42,7 +42,7 @@ struct ContentView: View {
         .onChange(of: immersiveStateModel.immersiveState) { _, newValue in
             Task {
                 if newValue == .open {
-                    switch await openImmersiveSpace(id: heroScene) {
+                    switch await openImmersiveSpace(id: aiBotScene) {
                     case .opened:
                         labelText = "Dismiss AI Assistant"
                         immersiveStateModel.immersiveState = .open
