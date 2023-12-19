@@ -1,0 +1,80 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "Reality Composer Pro Version 1.0 (409.60.6)"
+    }
+    defaultPrim = "Root"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Root"
+{
+    def RealityKitComponent "VFXEmitter"
+    {
+        uniform token info:id = "RealityKit.VFXEmitter"
+
+        def RealityKitStruct "currentState"
+        {
+            token birthDirection = "Local"
+            token birthLocation = "Volume"
+            int64 burstCount = 1000
+            double emissionDuration = 5
+            token emitterShape = "Box"
+            bool isLocal = 0
+            bool isLocalFields = 0
+            float particleSpeed = 0.8
+            bool spawnInheritParentColor = 0
+            token spawnOccasion = "OnDeath"
+            float spawnVelocityFactor = 1
+
+            def RealityKitStruct "mainEmitter"
+            {
+                token billboardMode = "Billboard"
+                float birthRate = 1000
+                float colorEvolutionPower = 1
+                float4 endColorA = (1, 0.1627996, 0, 1)
+                float4 endColorB = (1, 1, 1, 1)
+                bool isLightingEnabled = 1
+                float noiseScale = 0
+                float noiseStrength = 0
+                token opacityOverLife = "QuickFadeInOut"
+                float particleAngle = 0
+                double particleLifeSpan = 1
+                float particleSize = 0.2
+                float sizeMultiplierAtEndOfLifespan = 0.1
+                float sizeMultiplierAtEndOfLifespanPower = 1.5
+                float spreadingAngle = 0.2
+                float4 startColorA = (0.9469601, 1, 0, 1)
+                float4 startColorB = (1, 1, 1, 1)
+                float stretchFactor = 0.5
+                bool useEndColor = 1
+                bool useEndColorRange = 1
+                bool useStartColorRange = 1
+            }
+
+            def RealityKitStruct "spawnedEmitter"
+            {
+            }
+        }
+    }
+
+    def RealityKitComponent "AmbientAudio"
+    {
+        uniform token info:id = "RealityKit.AmbientAudio"
+    }
+
+    def RealityKitAudioFile "fire_wav"
+    {
+        uniform asset file = @fire.wav@
+    }
+
+    def Xform "SpatialAudio"
+    {
+        def RealityKitComponent "SpatialAudio"
+        {
+            uniform token info:id = "RealityKit.SpatialAudio"
+        }
+    }
+}
+
