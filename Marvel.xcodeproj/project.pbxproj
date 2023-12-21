@@ -16,6 +16,7 @@
 		F0CEAB372B2ED2990062A32B /* AnimationPlayTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CEAB362B2ED2990062A32B /* AnimationPlayTool.swift */; };
 		F0CEAB392B2F0AD70062A32B /* SceneNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CEAB382B2F0AD70062A32B /* SceneNames.swift */; };
 		F0CEAB3B2B3020A40062A32B /* ImmersiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CEAB3A2B3020A40062A32B /* ImmersiveViewModel.swift */; };
+		F0CEAB602B3190B40062A32B /* HeroStageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CEAB5F2B3190B40062A32B /* HeroStageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F0CEAB362B2ED2990062A32B /* AnimationPlayTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPlayTool.swift; sourceTree = "<group>"; };
 		F0CEAB382B2F0AD70062A32B /* SceneNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneNames.swift; sourceTree = "<group>"; };
 		F0CEAB3A2B3020A40062A32B /* ImmersiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveViewModel.swift; sourceTree = "<group>"; };
+		F0CEAB5F2B3190B40062A32B /* HeroStageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroStageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				F0CEAB252B2EC7950062A32B /* MarvelApp.swift */,
 				F0CEAB272B2EC7950062A32B /* ContentView.swift */,
 				F0CEAB292B2EC7950062A32B /* ImmersiveView.swift */,
+				F0CEAB5F2B3190B40062A32B /* HeroStageView.swift */,
 				F0CEAB3A2B3020A40062A32B /* ImmersiveViewModel.swift */,
 				F0CEAB362B2ED2990062A32B /* AnimationPlayTool.swift */,
 				F0CEAB382B2F0AD70062A32B /* SceneNames.swift */,
@@ -171,6 +174,7 @@
 				F0CEAB282B2EC7950062A32B /* ContentView.swift in Sources */,
 				F0CEAB262B2EC7950062A32B /* MarvelApp.swift in Sources */,
 				F0CEAB372B2ED2990062A32B /* AnimationPlayTool.swift in Sources */,
+				F0CEAB602B3190B40062A32B /* HeroStageView.swift in Sources */,
 				F0CEAB2A2B2EC7950062A32B /* ImmersiveView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

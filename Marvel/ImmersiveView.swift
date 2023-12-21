@@ -20,7 +20,8 @@ struct ImmersiveView: View {
     @State public var showAttachmentButtons = false
     
     @State private var inputText = ""
-    @State public var showTextField = false
+    @State private var showTextField = false
+    @State private var rootRealityContent: RealityViewContent? = nil
     
     var body: some View {
         @Bindable var viewModel = viewModel
@@ -33,6 +34,7 @@ struct ImmersiveView: View {
                 ImmersiveView.rotateEntityAroundYAxis(entity: characterEntity, angle: radians)
                 characterEntity.addChild(scene)
                 content.add(characterEntity)
+                rootRealityContent = content
                 await AnimationPlayTool.playAnimations(rootEntity: scene, targetEntityName: "SkinnedMeshes", repeatCount: 1)
                 withAnimation(.easeInOut(duration: 0.3)) {
                     showAttachmentButtons = true
@@ -97,7 +99,7 @@ struct ImmersiveView: View {
             case .intro:
                 playIntroSequence()
             case .immersive:
-                break
+                showHeroStage()
             }
         }
         .onChange(of: immersiveStateModel.immersiveState) { oldValue, newValue in
@@ -110,6 +112,23 @@ struct ImmersiveView: View {
         }
     }
     //Hello, I am Jarvis, your AI assistant. Do you need to start the service today?
+    
+    func showHeroStage()  {
+        
+        let entity =  AnchorEntity()
+        let boxMesh =  MeshResource.generateSphere(radius: 0.5)
+        
+        let material = SimpleMaterial(color: .blue, isMetallic: true)
+        let boxEntity =  ModelEntity(mesh: boxMesh, materials: [material])
+        entity.addChild(boxEntity)
+        rootRealityContent?.add(boxEntity)
+        
+        Task {
+            if let heroContainerEntity = try? await Entity(named: heroContainerScene, in: realityKitContentBundle) {
+                rootRealityContent?.add(heroContainerEntity)
+            }
+        }
+    }
     
     func dismissImmersiveView() {
         Task {

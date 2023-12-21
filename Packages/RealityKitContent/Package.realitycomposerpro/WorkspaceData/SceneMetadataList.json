@@ -80,6 +80,18 @@
       }
     ]
   },
+  "A0D6E513-D94E-485F-B4DD-D4B86225BE19" : {
+    "objectMetadataList" : [
+      [
+        "A0D6E513-D94E-485F-B4DD-D4B86225BE19",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
   "AF09ED6F-1707-48FD-8720-65B998362C09" : {
     "objectMetadataList" : [
       [
@@ -133,6 +145,15 @@
         "Root",
         "GridMaterial",
         "GridMaterial"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "D66134B1-3681-4A8E-AFE5-29F257229F3B",
+        "Root",
+        "Robot_RoCKet"
       ],
       {
         "isExpanded" : true,

@@ -10,5 +10,17 @@
 
 def Xform "Root"
 {
+    def "stage_gachimuchi" (
+        active = true
+        customData = {
+            float3 rotationEulerHint = (0, -1.5707963, 0)
+        }
+        prepend references = @MarvelModels/Others/stage_gachimuchi.usdz@
+    )
+    {
+        quatf xformOp:orient = (0.70710677, 0, -0.70710677, 0)
+        float3 xformOp:scale = (0.005, 0.005, 0.005)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+    }
 }
 
