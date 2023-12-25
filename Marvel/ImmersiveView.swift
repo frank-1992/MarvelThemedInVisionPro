@@ -17,11 +17,20 @@ struct ImmersiveView: View {
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
     
+    @Environment(\.openWindow) private var openWindow
+    
     @State public var showAttachmentButtons = false
     
     @State private var inputText = ""
     @State private var showTextField = false
     @State private var rootRealityContent: RealityViewContent? = nil
+    @State private var rootEntity: Entity? = nil
+
+    
+    private let heroGroups = [antMan, dareDevil, venom, fortniteThanos, deadpool]
+    
+    @State private var subscriptions = [EventSubscription]()
+//    @State private var attachmentsProvider = AttachmentsProvider()
     
     var body: some View {
         @Bindable var viewModel = viewModel
@@ -35,6 +44,7 @@ struct ImmersiveView: View {
                 characterEntity.addChild(scene)
                 content.add(characterEntity)
                 rootRealityContent = content
+                rootEntity = scene
                 await AnimationPlayTool.playAnimations(rootEntity: scene, targetEntityName: "SkinnedMeshes", repeatCount: 1)
                 withAnimation(.easeInOut(duration: 0.3)) {
                     showAttachmentButtons = true
@@ -42,8 +52,9 @@ struct ImmersiveView: View {
                 ImmersiveView.showAttachIntroduction(with: characterEntity, attachments: attachments)
                 viewModel.flowState = .intro
             }
-        } update: { _, _ in
             
+            
+        } update: { content, attachments in
         } attachments: {
             Attachment(id: "interaction") {
                 VStack {
@@ -86,12 +97,20 @@ struct ImmersiveView: View {
                 .opacity(showTextField ? 1 : 0)
             }
         }
-        .gesture(SpatialTapGesture().targetedToAnyEntity().onEnded {
-            _ in
-            if viewModel.flowState == .none {
-                viewModel.flowState = .intro
-            }
-        })
+        .gesture(
+            SpatialTapGesture()
+                .targetedToAnyEntity()
+                .onEnded { value in
+                    if viewModel.flowState == .none {
+                        viewModel.flowState = .intro
+                    }
+                    
+                    if heroGroups.contains(value.entity.name) {
+                        // show detail
+                        openHeroDescriptionWindow()
+                    }
+                }
+        )
         .onChange(of: viewModel.flowState) { oldValue, newValue in
             switch newValue {
             case .none:
@@ -114,19 +133,23 @@ struct ImmersiveView: View {
     //Hello, I am Jarvis, your AI assistant. Do you need to start the service today?
     
     func showHeroStage()  {
-        
-        let entity =  AnchorEntity()
-        let boxMesh =  MeshResource.generateSphere(radius: 0.5)
-        
-        let material = SimpleMaterial(color: .blue, isMetallic: true)
-        let boxEntity =  ModelEntity(mesh: boxMesh, materials: [material])
-        entity.addChild(boxEntity)
-        rootRealityContent?.add(boxEntity)
-        
+        showAttachmentButtons = false
+        inputText = ""
+        showTextField = false
         Task {
-            if let heroContainerEntity = try? await Entity(named: heroContainerScene, in: realityKitContentBundle) {
+            if let heroContainerEntity = try? await Entity(named: heroGroupScene, in: realityKitContentBundle) {
                 rootRealityContent?.add(heroContainerEntity)
+                if let venomEntity = await heroContainerEntity.findEntity(named: "Venom"), let meshEntity = await venomEntity.findEntity(named: "_176_Venom_MUA") {
+                    await AnimationPlayTool.playAnimations(rootEntity: meshEntity, targetEntityName: "SkinnedMeshes")
+                }
+                
             }
+        }
+    }
+    
+    func openHeroDescriptionWindow() {
+        DispatchQueue.main.async {
+            openWindow(id: heroGroupScene)
         }
     }
     

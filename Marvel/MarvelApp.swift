@@ -16,13 +16,17 @@ struct MarvelApp: App {
         WindowGroup {
             ContentView()
                 .environment(immersiveStateModel)
-        }
+        }.windowStyle(.plain)
 
         ImmersiveSpace(id: aiBotScene) {
             ImmersiveView()
                 .environment(viewModel)
                 .environment(immersiveStateModel)
             
+        }
+        
+        WindowGroup(id: heroGroupScene) {
+            HeroGroupView()
         }
     }
 }

@@ -11,6 +11,27 @@
       }
     ]
   },
+  "6A95B9AC-8944-48AB-B052-04DE7A66AD7D" : {
+    "objectMetadataList" : [
+      [
+        "6A95B9AC-8944-48AB-B052-04DE7A66AD7D",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "6A95B9AC-8944-48AB-B052-04DE7A66AD7D",
+        "Root",
+        "FortniteThanos"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
   "65F6F990-A780-4474-B78B-572E0E4E273D" : {
     "objectMetadataList" : [
       [
@@ -27,8 +48,7 @@
     "objectMetadataList" : [
       [
         "496AC90B-FD60-47C0-8454-5342381AA1CA",
-        "Root",
-        "Robot_RoCKet"
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -36,7 +56,8 @@
       },
       [
         "496AC90B-FD60-47C0-8454-5342381AA1CA",
-        "Root"
+        "Root",
+        "Robot_RoCKet"
       ],
       {
         "isExpanded" : true,
@@ -48,14 +69,6 @@
     "objectMetadataList" : [
       [
         "949A5743-6394-43D1-9AD7-3628BEC69FBB",
-        "Root"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "949A5743-6394-43D1-9AD7-3628BEC69FBB",
         "Root",
         "SpatialAudio"
       ],
@@ -65,6 +78,14 @@
         "selectedAudioFilePrim" : {
           "string" : "\/Root\/fire_wav"
         }
+      },
+      [
+        "949A5743-6394-43D1-9AD7-3628BEC69FBB",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
       }
     ]
   },
@@ -80,11 +101,46 @@
       }
     ]
   },
+  "44625471-8E99-4D6D-B430-86D4882A2579" : {
+    "objectMetadataList" : [
+      [
+        "44625471-8E99-4D6D-B430-86D4882A2579",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      }
+    ]
+  },
   "A0D6E513-D94E-485F-B4DD-D4B86225BE19" : {
     "objectMetadataList" : [
       [
         "A0D6E513-D94E-485F-B4DD-D4B86225BE19",
+        "Root",
+        "stage_gachimuchi",
+        "Meshes",
+        "Sketchfab_model",
+        "panggung32_obj_cleaner_materialmerger_gles",
+        "Object_3",
+        "Object_1"
+      ],
+      {
+        "isExpanded" : false,
+        "isLocked" : true
+      },
+      [
+        "A0D6E513-D94E-485F-B4DD-D4B86225BE19",
         "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
+      },
+      [
+        "A0D6E513-D94E-485F-B4DD-D4B86225BE19",
+        "Root",
+        "stage_gachimuchi"
       ],
       {
         "isExpanded" : true,
@@ -134,7 +190,9 @@
     "objectMetadataList" : [
       [
         "D66134B1-3681-4A8E-AFE5-29F257229F3B",
-        "Root"
+        "Root",
+        "GridMaterial",
+        "GridMaterial"
       ],
       {
         "isExpanded" : true,
@@ -142,9 +200,7 @@
       },
       [
         "D66134B1-3681-4A8E-AFE5-29F257229F3B",
-        "Root",
-        "GridMaterial",
-        "GridMaterial"
+        "Root"
       ],
       {
         "isExpanded" : true,
@@ -163,14 +219,6 @@
   },
   "FC7FDA42-FBA4-42D2-9577-BA5A3188AB58" : {
     "objectMetadataList" : [
-      [
-        "FC7FDA42-FBA4-42D2-9577-BA5A3188AB58",
-        "Root"
-      ],
-      {
-        "isExpanded" : true,
-        "isLocked" : false
-      },
       [
         "FC7FDA42-FBA4-42D2-9577-BA5A3188AB58",
         "Root",
@@ -195,6 +243,14 @@
         "selectedAudioFilePrim" : {
           "string" : "\/Root\/FileParticle\/fire_wav"
         }
+      },
+      [
+        "FC7FDA42-FBA4-42D2-9577-BA5A3188AB58",
+        "Root"
+      ],
+      {
+        "isExpanded" : true,
+        "isLocked" : false
       }
     ]
   }

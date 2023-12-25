@@ -21,10 +21,12 @@ struct ContentView: View {
     var body: some View {
         @Bindable var immersiveStateModel = immersiveStateModel
         VStack {
-            Model3D(named: "Scene", bundle: realityKitContentBundle)
-                .padding(.top, 100)
+//            Model3D(named: "Scene", bundle: realityKitContentBundle)
+//                .padding(.top, 100)
 
-            Text("Hello, I'm Javris!")
+            Text("Marvel Store")
+                .font(.largeTitle)
+                .foregroundStyle(Color.red)
                 .padding(.bottom, 50)
 
 
@@ -36,6 +38,7 @@ struct ContentView: View {
                 }
             }) {
                 Text(labelText)
+                    .font(.largeTitle)
             }
         }
         .padding()
